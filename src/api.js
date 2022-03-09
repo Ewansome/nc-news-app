@@ -8,7 +8,6 @@ export function fetchArticles(topic) {
       },
     })
     .then((res) => {
-      console.log(res.data);
       return res.data;
     })
     .then(({ articles }) => {
@@ -40,3 +39,5 @@ export function fetchArticleTopics() {
       return topics;
     });
 }
+
+export function fetchArticleComments() {}
