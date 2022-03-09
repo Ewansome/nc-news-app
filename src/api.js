@@ -40,4 +40,17 @@ export function fetchArticleTopics() {
     });
 }
 
-export function fetchArticleComments() {}
+export function fetchArticleComments(article_id) {
+  console.log(article_id);
+  return fetch(
+    `
+    https://nc-news-example-seminar-3-20.herokuapp.com/api/articles/${article_id}/comments
+    `
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then(({ comments }) => {
+      return comments;
+    });
+}

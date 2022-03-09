@@ -9,6 +9,8 @@ export default function ArticlePage(props) {
   const [article, setArticle] = useState([]);
   const { isLoading, setIsLoading, error, setError } = props;
 
+  console.log(articleId);
+
   useEffect(() => {
     setIsLoading(true);
     api
@@ -41,11 +43,14 @@ export default function ArticlePage(props) {
         <li>{article.body}</li>
         <br></br>
         <hr></hr>
-        <li>{article.topic}</li>
-        <li>{article.author}</li>
-        <li>{article.votes}</li>
-        <li>{article.created_at}</li>
-        <li>{article.comment_count}</li>
+        <li>Topic: {article.topic}</li>
+        <li>Author: {article.author}</li>
+        <li>Votes: {article.votes}</li>
+        <li>created at: {article.created_at}</li>
+        <li>Comment count: {article.comment_count}</li>
+        <Link to={`/articles/${articleId}/comments`}>
+          <li>Click to view comments...</li>
+        </Link>
       </ul>
     </div>
   );

@@ -7,6 +7,7 @@ import Topic from "./Topic";
 import ErrorPage from "./ErrorPage";
 import { Link } from "react-router-dom";
 import OrderBy from "./OrderBy";
+import Comments from "./Comments";
 
 export default function Main() {
   const [topic, setTopic] = useState("");
@@ -74,6 +75,7 @@ export default function Main() {
             />
           }
         />
+        <Route path={`/articles/:articleId/comments`} element={<Comments />} />
         <Route path={`*`} element={<ErrorPage />} />
       </Routes>
     </div>
