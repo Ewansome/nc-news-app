@@ -1,38 +1,82 @@
-.App {
+.nc-news-app {
+  background-color: rgb(93, 189, 157);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.header {
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border-style: groove;
+  border-radius: 10px;
+  border-width: 8px;
+  border-color: rgb(20, 153, 109);
+  background-color: rgb(149, 228, 202);
+}
+
+.h1Andh2 {
+  border-style: groove;
+  border-radius: 10px;
+  border-color: rgb(13, 116, 81);
+  background-color: rgb(60, 139, 113);
+  color: azure;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.main {
+  text-align: left;
+  margin: 10px;
+  background-color: rgb(149, 228, 202);
+  padding: 10px;
+  border-style: groove;
+  border-radius: 10px;
+  border-color: rgb(13, 116, 81);
+  border-width: 6px;
+}
+
+.mainTitles {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-top: 5px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navButtons {
+  height: 30px;
+  width: 100px;
+}
+
+.articlesList {
+  list-style: none;
+  background-color: white;
+  border-style: solid;
+  border-radius: 10px;
+  text-align: left;
+  padding: 15px;
+}
+
+.articleTitle {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: larger;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgb(149, 228, 202);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body {
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.topicsButtons {
+  margin-top: 20px;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  border-style: ridge;
 }
