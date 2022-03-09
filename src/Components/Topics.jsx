@@ -24,11 +24,19 @@ export default function Topics(props) {
         const { slug, description } = topic;
         return (
           <div>
-            <Link to={`/topics/${topic.slug}`}>
-              <button onClick={() => setTopic(slug)}>{slug}</button>
-            </Link>
-
-            <p>{description}</p>
+            <div>
+              <Link to={`/topics/${topic.slug}`}>
+                <button
+                  className="topicsButtons"
+                  onClick={() => setTopic(slug)}
+                >
+                  {slug}
+                </button>
+              </Link>
+            </div>
+            <div>
+              <p>{description}</p>
+            </div>
           </div>
         );
       })}

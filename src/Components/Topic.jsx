@@ -23,9 +23,10 @@ export default function Coding() {
           info;
 
         return (
-          <ul>
-            <li>{title}</li>
+          <ul className="articlesList">
+            <li className="articleTitle">{title}</li>
             <li>{body}</li>
+            <hr></hr>
             <li>{author}</li>
             <li>{topic}</li>
             <li>{votes}</li>

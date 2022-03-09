@@ -16,9 +16,11 @@ export default function ArticlePage() {
   return (
     <div>
       <Link to="/">Homepage</Link>
-      <ul>
-        <li>{article.title}</li>
+      <ul className="articlesList">
+        <li className="articleTitle">{article.title}</li>
         <li>{article.body}</li>
+        <br></br>
+        <hr></hr>
         <li>{article.topic}</li>
         <li>{article.author}</li>
         <li>{article.votes}</li>

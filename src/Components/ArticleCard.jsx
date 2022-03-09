@@ -25,7 +25,8 @@ export default function ArticleCard(props) {
               {body}
             </li>
             <br></br>
-            <li key="articletopic" className="">
+            <hr></hr>
+            <li key="articletopic" className="allArticlesTopic">
               Topic: {topic}
             </li>
             <li key="articleauthor" className="author">
