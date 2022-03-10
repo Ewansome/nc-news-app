@@ -81,3 +81,5 @@ export default function Main() {
     </div>
   );
 }
+
+//put error and loading state on each child component for rendering purposes
