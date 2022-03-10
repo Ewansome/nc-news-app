@@ -57,6 +57,6 @@ export function fetchArticleComments(article_id) {
 export function patchArticles(articleId, votes) {
   return axios.patch(
     `https://nc-news-example-seminar-3-20.herokuapp.com/api/articles/${articleId}`,
-    { votes: votes }
+    { inc_votes: votes }
   );
 }

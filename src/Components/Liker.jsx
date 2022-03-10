@@ -10,7 +10,7 @@ export default function Liker(props) {
     setIncrement((currentIncrement) => {
       return currentIncrement + incVotes;
     });
-    api.patchArticles(articleId, 1).catch(() => {
+    api.patchArticles(articleId, incVotes).catch(() => {
       setIncrement((currentIncrement) => {
         return currentIncrement - incVotes;
       });
