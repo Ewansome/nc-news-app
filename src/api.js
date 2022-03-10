@@ -60,3 +60,11 @@ export function patchArticles(articleId, votes) {
     { inc_votes: votes }
   );
 }
+
+export function postComment(articleId, comment) {
+  return axios.post(
+    `
+    https://nc-news-example-seminar-3-20.herokuapp.com/api/articles/${articleId}/comments`,
+    comment
+  );
+}
