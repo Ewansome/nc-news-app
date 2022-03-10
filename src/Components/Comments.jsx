@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import * as api from "../api";
+import Commenter from "./Commenter";
 
 export default function Comments() {
   const { articleId } = useParams();
@@ -16,6 +17,8 @@ export default function Comments() {
     <div>
       <Link to="/">Homepage</Link>
       <h2>Comments</h2>
+      <Commenter setComments={setComments} />
+      <br></br>
       {comments.map((comment) => {
         const { body, author, votes, created_at, comment_id } = comment;
         return (
