@@ -52,11 +52,9 @@ export default function OrderBy(props) {
       <button
         className="navButton"
         onClick={() => {
-          api.fetchArticles().then((articles) => {
-            setAllArticles((allArticles) =>
-              [...allArticles].sort((a, b) => (a.typeOf < b.typeOf ? 1 : -1))
-            );
-          });
+          setAllArticles((allArticles) =>
+            [...allArticles].sort((a, b) => (a.typeOf < b.typeOf ? 1 : -1))
+          );
         }}
       >
         Ascending
@@ -64,11 +62,9 @@ export default function OrderBy(props) {
       <button
         className="navButton"
         onClick={() => {
-          api.fetchArticles().then((articles) => {
-            setAllArticles((allArticles) =>
-              [...allArticles].sort((a, b) => (a.typeOf > b.typeOf ? 1 : -1))
-            );
-          });
+          setAllArticles((allArticles) =>
+            [...allArticles].sort((a, b) => (a.typeOf > b.typeOf ? 1 : -1))
+          );
         }}
       >
         Descending
