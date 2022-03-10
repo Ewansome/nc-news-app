@@ -41,7 +41,7 @@ export default function ArticleCard(props) {
             <li key="articlecomments" className="comment_count">
               Comments: {comment_count}
             </li>
-            <li>
+            <li key="linkToArticle">
               <Link to={`/articles/${article_id}`}>View full article</Link>
             </li>
           </ul>
