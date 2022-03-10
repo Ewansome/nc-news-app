@@ -2,19 +2,37 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import * as api from "../api";
+import ErrorPage from "./ErrorPage";
 
-export default function Coding() {
+export default function Coding(props) {
   const { topic } = useParams();
   const [topicInfo, setTopicInfo] = useState([]);
+  const { isLoading, setIsLoading, error, setError } = props;
 
   useEffect(() => {
-    api.fetchArticles(topic).then((topicData) => {
-      console.log(topicData);
-      setTopicInfo(topicData);
-    });
-  });
+    setIsLoading(true);
+    api
+      .fetchArticles(topic)
+      .then((topicData) => {
+        setTopicInfo(topicData);
+        setIsLoading(false);
+        setError(null);
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg },
+            status,
+          },
+        }) => {
+          setError({ msg, status });
+          setIsLoading(false);
+        }
+      );
+  }, [topic, setIsLoading, setError]);
 
-  console.log(topic);
+  if (isLoading) return <h2>loading...</h2>;
+  if (error) return <ErrorPage status={error.status} msg={error.msg} />;
   return (
     <div>
       <Link to="/">Homepage</Link>

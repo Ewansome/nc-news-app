@@ -4,19 +4,18 @@ import { Link } from "react-router-dom";
 import * as api from "../api";
 
 export default function Topics(props) {
-  const { setTopic } = props;
+  const { setTopic, isLoading, setIsLoading } = props;
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
+    setIsLoading(true);
     api.fetchArticleTopics().then((topicsData) => {
-      console.log(topicsData);
       setTopics(topicsData);
+      setIsLoading(false);
     });
-  }, []);
+  }, [setIsLoading]);
 
-  {
-    console.log(topics.slug);
-  }
+  if (isLoading) return <h2>loading...</h2>;
   return (
     <div>
       <Link to="/">Homepage</Link>

@@ -8,7 +8,6 @@ export function fetchArticles(topic) {
       },
     })
     .then((res) => {
-      console.log(res.data);
       return res.data;
     })
     .then(({ articles }) => {
@@ -38,5 +37,20 @@ export function fetchArticleTopics() {
     })
     .then(({ topics }) => {
       return topics;
+    });
+}
+
+export function fetchArticleComments(article_id) {
+  console.log(article_id);
+  return fetch(
+    `
+    https://nc-news-example-seminar-3-20.herokuapp.com/api/articles/${article_id}/comments
+    `
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then(({ comments }) => {
+      return comments;
     });
 }
