@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Liker from "./Liker";
 
 export default function ArticleCard(props) {
   const { allArticles } = props;
+
   return (
     <div>
       {allArticles.map((article) => {
@@ -44,6 +46,7 @@ export default function ArticleCard(props) {
             <li key="linkToArticle">
               <Link to={`/articles/${article_id}`}>View full article</Link>
             </li>
+            <Liker votes={article.votes} articleId={article.article_id} />
           </ul>
         );
       })}

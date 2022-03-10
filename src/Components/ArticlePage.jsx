@@ -3,6 +3,7 @@ import * as api from "../api";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
+import Liker from "./Liker";
 
 export default function ArticlePage(props) {
   const { articleId } = useParams();
@@ -45,12 +46,13 @@ export default function ArticlePage(props) {
         <hr></hr>
         <li>Topic: {article.topic}</li>
         <li>Author: {article.author}</li>
-        <li>Votes: {article.votes}</li>
+
         <li>created at: {article.created_at}</li>
         <li>Comment count: {article.comment_count}</li>
         <Link to={`/articles/${articleId}/comments`}>
           <li>Click to view comments...</li>
         </Link>
+        <Liker votes={article.votes} articleId={article.article_id} />
       </ul>
     </div>
   );
