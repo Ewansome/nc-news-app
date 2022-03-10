@@ -53,3 +53,12 @@ export function fetchArticleComments(article_id) {
       return comments;
     });
 }
+
+export function patchArticles(article_id, votes) {
+  console.log(votes);
+  return axios.patch(
+    `https://nc-news-example-seminar-3-20.herokuapp.com/api/articles/${article_id}`,
+
+    { inc_votes: votes }
+  );
+}
