@@ -38,10 +38,9 @@ export default function Comments() {
             <p>Votes: {votes}</p>
             <p>Created at: {created_at}</p>
             <DeleteComment
-              setComments
+              comments={comments}
+              setComments={setComments}
               commentId={comment_id}
-              setCommentId={setCommentId}
-              comment={comment}
             />
           </div>
         );

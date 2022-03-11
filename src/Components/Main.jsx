@@ -5,8 +5,6 @@ import Articles from "./Articles";
 import Topics from "./Topics";
 import Topic from "./Topic";
 import ErrorPage from "./ErrorPage";
-import { Link } from "react-router-dom";
-import OrderBy from "./OrderBy";
 import Comments from "./Comments";
 
 export default function Main() {
@@ -17,17 +15,6 @@ export default function Main() {
 
   return (
     <div className="main">
-      <div className="mainTitles"></div>
-      <h3>Link to topics page:</h3>
-      <div className="buttonContainer">
-        <Link to="/topics">
-          <button className="navButtons">Topics</button>
-        </Link>
-      </div>
-      <OrderBy allArticles={allArticles} setAllArticles={setAllArticles} />
-      <hr></hr>
-      <h2>Click an article to read more about it...</h2>
-
       <Routes>
         <Route
           path="/"
