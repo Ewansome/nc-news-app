@@ -23,7 +23,7 @@ export default function Topics(props) {
       </button>
 
       {topics.map((topic) => {
-        const { slug, description } = topic;
+        const { slug } = topic;
         return (
           <>
             <div className="topicsDiv">

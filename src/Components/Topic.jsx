@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import * as api from "../api";
 import ErrorPage from "./ErrorPage";
+import Liker from "./Liker";
 
 export default function Coding(props) {
   const { topic } = useParams();
@@ -33,24 +34,46 @@ export default function Coding(props) {
 
   if (isLoading) return <h2>loading...</h2>;
   if (error) return <ErrorPage status={error.status} msg={error.msg} />;
+
   return (
     <div>
-      <Link to="/">Homepage</Link>
+      <div className="topicPageButtons">
+        <button className="homepageButton">
+          <Link to="/">Homepage</Link>
+        </button>
+        <button className="topicsButton">
+          <Link to="/topics">Topics</Link>
+        </button>
+      </div>
+
+      <h1>{topic} articles</h1>
+
       {topicInfo.map((info) => {
-        const { title, author, topic, body, votes, created_at, comment_count } =
-          info;
+        const {
+          title,
+          author,
+          topic,
+          body,
+          votes,
+          created_at,
+          comment_count,
+          article_id,
+        } = info;
 
         return (
-          <ul className="articlesList">
-            <li className="articleTitle">{title}</li>
-            <li>{body}</li>
-            <hr></hr>
-            <li>{author}</li>
-            <li>{topic}</li>
-            <li>{votes}</li>
-            <li>{created_at}</li>
-            <li>{comment_count}</li>
-          </ul>
+          <>
+            <ul className="articlesList">
+              <li className="articleTitle">{title}</li>
+              <li>{body}</li>
+              <hr></hr>
+              <li>Author: {author}</li>
+              <li>Topic: {topic}</li>
+              <li>Date: {created_at}</li>
+              <li>Comments: {comment_count}</li>
+              <Link to={`/articles/${article_id}`}>View full article</Link>
+              <Liker votes={votes} article_id={article_id} />
+            </ul>
+          </>
         );
       })}
     </div>
