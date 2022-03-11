@@ -17,13 +17,16 @@ export default function Topics(props) {
 
   if (isLoading) return <h2>loading...</h2>;
   return (
-    <div>
-      <Link to="/">Homepage</Link>
+    <>
+      <button className="homepageButton">
+        <Link to="/">Homepage</Link>
+      </button>
+
       {topics.map((topic) => {
         const { slug, description } = topic;
         return (
-          <div>
-            <div>
+          <>
+            <div className="topicsDiv">
               <Link to={`/topics/${topic.slug}`}>
                 <button
                   className="topicsButtons"
@@ -33,12 +36,9 @@ export default function Topics(props) {
                 </button>
               </Link>
             </div>
-            <div>
-              <p>{description}</p>
-            </div>
-          </div>
+          </>
         );
       })}
-    </div>
+    </>
   );
 }

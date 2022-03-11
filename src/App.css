@@ -1,5 +1,5 @@
 .nc-news-app {
-  background-color: rgb(93, 189, 157);
+  background-color: rgb(30, 179, 179);
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -11,15 +11,15 @@
   border-style: groove;
   border-radius: 10px;
   border-width: 8px;
-  border-color: rgb(20, 153, 109);
-  background-color: rgb(149, 228, 202);
+  border-color: rgb(22, 119, 119);
+  background-color: rgb(30, 179, 179);
 }
 
 .h1Andh2 {
   border-style: groove;
   border-radius: 10px;
-  border-color: rgb(13, 116, 81);
-  background-color: rgb(60, 139, 113);
+  border-color: rgb(30, 179, 179);
+  background-color: rgb(11, 97, 97);
   color: azure;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
@@ -27,20 +27,15 @@
 .main {
   text-align: left;
   margin: 10px;
-  background-color: rgb(149, 228, 202);
+  background-color: rgb(30, 179, 179);
   padding: 10px;
   border-style: groove;
   border-radius: 10px;
-  border-color: rgb(13, 116, 81);
+  border-color: rgb(18, 94, 94);
   border-width: 6px;
 }
 
-.mainTitles {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  margin-top: 5px;
-}
-
-.buttonContainer {
+.categoryButtons {
   display: flex;
   justify-content: space-evenly;
 }
@@ -48,6 +43,16 @@
 .navButtons {
   height: 30px;
   width: 100px;
+  background-color: rgb(11, 97, 97);
+  border-radius: 10px;
+  color: white;
+  border-color: aliceblue;
+  border-style: solid;
+}
+
+.orderButtons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .articlesList {
@@ -65,7 +70,7 @@
   border-style: solid;
   border-radius: 10px;
   padding: 5px;
-  background-color: rgb(149, 228, 202);
+  background-color: rgb(30, 179, 179);
   text-align: center;
 }
 
@@ -73,10 +78,28 @@
   padding: 10px;
 }
 
+.topicsDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .topicsButtons {
   margin-top: 20px;
-  width: 300px;
-  height: 200px;
+  width: 200px;
+  height: 150px;
   border-radius: 10px;
   border-style: ridge;
+  background-color: rgb(129, 224, 224);
+  font-size: xx-large;
+  border-width: 8px;
+}
+
+.homepageButton {
+  border-style: solid;
+  border-color: black;
+  background-color: rgb(129, 224, 224);
+  color: white;
+  border-radius: 10px;
+  height: 30px;
+  width: 100px;
 }
