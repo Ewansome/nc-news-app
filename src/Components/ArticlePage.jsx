@@ -10,8 +10,6 @@ export default function ArticlePage(props) {
   const [article, setArticle] = useState([]);
   const { isLoading, setIsLoading, error, setError } = props;
 
-  console.log(articleId);
-
   useEffect(() => {
     setIsLoading(true);
     api

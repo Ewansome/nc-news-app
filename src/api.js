@@ -68,3 +68,11 @@ export function postComment(articleId, comment) {
     comment
   );
 }
+
+export function deleteComment(comment_id) {
+  return axios.delete(
+    `
+    https://nc-news-example-seminar-3-20.herokuapp.com/api/comments/${comment_id}
+    `
+  );
+}

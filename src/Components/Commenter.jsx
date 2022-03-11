@@ -2,8 +2,15 @@ import { useState } from "react";
 import * as api from "../api";
 
 export default function Commenter(props) {
-  const { comments, setComments, articleId } = props;
-  const [comment, setComment] = useState("");
+  const {
+    comments,
+    setComments,
+    articleId,
+    setCommentId,
+    comment,
+    setComment,
+  } = props;
+
   const [error, setError] = useState(false);
 
   const handleChange = (event) => {
@@ -19,8 +26,10 @@ export default function Commenter(props) {
       created_at: String(new Date()),
       comment_id: comments.length,
     };
+
     setError(false);
     setComment("");
+    setCommentId(comments.length);
     setComments((comments) => {
       return [newComment, ...comments];
     });
@@ -28,6 +37,8 @@ export default function Commenter(props) {
       setError(true);
     });
   };
+
+  //add error handler for unoptimistic render
 
   return (
     <>
