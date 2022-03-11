@@ -1,5 +1,5 @@
 export default function AscOrDesc(props) {
-  const { allArticles, setAllArticles } = props;
+  const { setAllArticles } = props;
   return (
     <>
       <h3>Choose what order they return in:</h3>

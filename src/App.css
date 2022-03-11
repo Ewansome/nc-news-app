@@ -78,10 +78,28 @@
   padding: 10px;
 }
 
+.topicsDiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .topicsButtons {
   margin-top: 20px;
-  width: 300px;
-  height: 200px;
+  width: 200px;
+  height: 150px;
   border-radius: 10px;
   border-style: ridge;
+  background-color: rgb(129, 224, 224);
+  font-size: xx-large;
+  border-width: 8px;
+}
+
+.homepageButton {
+  border-style: solid;
+  border-color: black;
+  background-color: rgb(129, 224, 224);
+  color: white;
+  border-radius: 10px;
+  height: 30px;
+  width: 100px;
 }
