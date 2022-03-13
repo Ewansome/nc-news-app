@@ -7,9 +7,7 @@ import DeleteComment from "./DeleteComment";
 export default function Comments() {
   const { articleId } = useParams();
   const [comments, setComments] = useState([]);
-  const [commentId, setCommentId] = useState("");
   const [comment, setComment] = useState("");
-  const [posted, setPosted] = useState(false);
   console.log(comment);
 
   useEffect(() => {
@@ -31,9 +29,6 @@ export default function Comments() {
 
       <h2>Comments</h2>
       <Commenter
-        posted={posted}
-        setPosted={setPosted}
-        setCommentId={setCommentId}
         comment={comment}
         setComment={setComment}
         comments={comments}
@@ -52,8 +47,6 @@ export default function Comments() {
             <p>Created at: {created_at}</p>
             {author === "cooljmessy" ? (
               <DeleteComment
-                posted={posted}
-                setPosted={setPosted}
                 comment={comment}
                 comments={comments}
                 setComments={setComments}
