@@ -2,15 +2,7 @@ import { useState } from "react";
 import * as api from "../api";
 
 export default function Commenter(props) {
-  const {
-    comments,
-    setComments,
-    articleId,
-    setCommentId,
-    comment,
-    setComment,
-  } = props;
-
+  const { setComments, articleId, comment, setComment } = props;
   const [error, setError] = useState(false);
 
   const handleChange = (event) => {
@@ -21,24 +13,27 @@ export default function Commenter(props) {
     event.preventDefault();
     const newComment = {
       body: String(comment),
-      username: "happyamy2016",
+      username: "cooljmessy",
+      author: "",
       votes: 0,
       created_at: String(new Date()),
-      comment_id: comments.length,
     };
 
     setError(false);
-    setComment("");
-    setCommentId(comments.length);
     setComments((comments) => {
       return [newComment, ...comments];
     });
-    api.postComment(articleId, newComment).catch((err) => {
-      setError(true);
-    });
+    api
+      .postComment(articleId, newComment)
+      .then(() => {
+        api.fetchArticleComments(articleId).then((comments) => {
+          setComments(comments);
+        });
+      })
+      .catch((err) => {
+        setError(true);
+      });
   };
-
-  //add error handler for unoptimistic render
 
   return (
     <>
