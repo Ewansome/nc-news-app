@@ -2,14 +2,7 @@ import { useState } from "react";
 import * as api from "../api";
 
 export default function Commenter(props) {
-  const {
-    setComments,
-    articleId,
-    setCommentId,
-    comment,
-    setComment,
-    setPosted,
-  } = props;
+  const { setComments, articleId, comment, setComment } = props;
   const [error, setError] = useState(false);
 
   const handleChange = (event) => {
@@ -27,14 +20,15 @@ export default function Commenter(props) {
     };
 
     setError(false);
-    setComment("");
     setComments((comments) => {
       return [newComment, ...comments];
     });
     api
       .postComment(articleId, newComment)
       .then(() => {
-        setPosted(true);
+        api.fetchArticleComments(articleId).then((comments) => {
+          setComments(comments);
+        });
       })
       .catch((err) => {
         setError(true);

@@ -50,14 +50,18 @@ export default function Comments() {
             <p>Author: {author}</p>
             <p>Votes: {votes}</p>
             <p>Created at: {created_at}</p>
-            <DeleteComment
-              posted={posted}
-              setPosted={setPosted}
-              comment={comment}
-              comments={comments}
-              setComments={setComments}
-              commentId={comment_id}
-            />
+            {author === "cooljmessy" ? (
+              <DeleteComment
+                posted={posted}
+                setPosted={setPosted}
+                comment={comment}
+                comments={comments}
+                setComments={setComments}
+                commentId={comment_id}
+              />
+            ) : (
+              ""
+            )}
           </div>
         );
       })}

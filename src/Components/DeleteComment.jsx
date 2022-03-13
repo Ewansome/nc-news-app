@@ -14,6 +14,7 @@ export default function DeleteComment(props) {
       <button
         disabled={disabled}
         onClick={() => {
+          setDisabled(true);
           setIsLoading(true);
           setError(false);
           api
@@ -46,6 +47,7 @@ export default function DeleteComment(props) {
 //if comment idd = undefined disable delete button
 
 //or
+
 //create state for if comment posted and use to re render fetchArtcileCommets
 
 //put username in comments map function, if username == map username, render button

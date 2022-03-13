@@ -36,7 +36,9 @@ export default function ArticlePage(props) {
   if (error) return <ErrorPage status={error.status} msg={error.msg} />;
   return (
     <div>
-      <Link to="/">Homepage</Link>
+      <button className="homepageButton">
+        <Link to="/">Homepage</Link>
+      </button>
       <ul className="articlesList">
         <li className="articleTitle">{article.title}</li>
         <li>{article.body}</li>
