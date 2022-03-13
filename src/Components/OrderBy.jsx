@@ -1,4 +1,3 @@
-import { useState } from "react";
 import AscOrDesc from "./AscOrDesc";
 
 export default function OrderBy(props) {

@@ -4,7 +4,7 @@ import * as api from "../api";
 
 export default function DeleteComment(props) {
   const { articleId } = useParams();
-  const { commentId, setComments, comments, posted } = props;
+  const { commentId, setComments, comments } = props;
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [disabled, setDisabled] = useState(false);
